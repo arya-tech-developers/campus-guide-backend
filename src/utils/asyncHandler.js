@@ -5,13 +5,16 @@
 
 const asyncHandler = (requestHandler) => async (req,res,next)=>{
     try{
-        await requestHandler(req,res,next);
+        return await requestHandler(req,res,next);
     }catch(error){
-        res.status(error.code).json({
+        res.status(error.code).json(
+            {
             succes:false,
             message:error.message,
         })
+        next(error); 
     }
+    
 }
 
 export {asyncHandler};
