@@ -2,19 +2,19 @@
 //     Promise.resolve(requestHandler(request,res,next)).reject((err)=>next(err))
 // }
 
+import { ApiResponse } from "./ApiRespose.js";
 
-const asyncHandler = (requestHandler) => async (req,res,next)=>{
-    try{
-        return await requestHandler(req,res,next);
-    }catch(error){
-        res.status(error.code).json(
-            {
-            succes:false,
-            message:error.message,
-        })
-        next(error); 
+
+const asyncHandler = (requestHandler) => 
+    async (req, res, next) => {
+        try {
+            return await requestHandler(req, res, next);
+        } catch (error) {
+            res.status(500).json(new ApiResponse(error.statusCode, {}, error.message));
+
+        }
+
     }
-    
-}
 
-export {asyncHandler};
+
+export { asyncHandler };
