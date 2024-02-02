@@ -11,6 +11,7 @@ const userSchema = mongoose.Schema({
     },
     email:{
         type:String,
+        index:true,
         required:true,
         lowercase:true,
         trim:true,
@@ -41,7 +42,7 @@ const userSchema = mongoose.Schema({
         required:true,
         enum:["1","2","3","4","5","6","7","8"],
     },
-    refreshtoken:{
+    refreshToken:{
         type:String,
         // required:true,
     }

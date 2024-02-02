@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
 
+
+# Vs Code Files
+.vscode/
+
 ### Node ###
 # Logs
 logs
@@ -140,3 +144,6 @@ dist
 
 # SvelteKit build / generate output
 .svelte-kit
+
+# markdown files for notes talking
+MongoDB.md
