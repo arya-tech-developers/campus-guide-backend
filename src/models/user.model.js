@@ -30,17 +30,25 @@ const userSchema = mongoose.Schema({
         trim:true,
         lowercase:true,
         default:"srgc",
+    }, 
+    course:{
+        type:String,
+        required:true,
+        trim:true,
+        lowercase:true,
+        // required:true,
+        default:"b.tech"
+    },
+    semester:{
+        type:String,
+        required:true,
+        enum:["1","2","3","4","5","6","7","8"],
     },
     branch:{
         type:String,
         trim:true,
         requird:true,
         enum:["cse","me","ece","ee","ce"],
-    },
-    semester:{
-        type:String,
-        required:true,
-        enum:["1","2","3","4","5","6","7","8"],
     },
     refreshToken:{
         type:String,
