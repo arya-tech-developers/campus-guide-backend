@@ -2,7 +2,7 @@
 //     Promise.resolve(requestHandler(request,res,next)).reject((err)=>next(err))
 // }
 
-import { ApiResponse } from "./ApiRespose.js";
+import { ApiResponse } from "./ApiResponse.js";
 
 
 const asyncHandler = (requestHandler) => 
