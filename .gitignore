@@ -5,6 +5,9 @@
 # Vs Code Files
 .vscode/
 
+#public resources on server
+./public/temp
+
 ### Node ###
 # Logs
 logs

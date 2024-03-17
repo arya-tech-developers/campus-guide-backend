@@ -2,14 +2,10 @@ import mongoose from "mongoose";
 import { User } from "./user.model.js";
 
 
-const questionPaperSchema = await mongoose.Schema({
-    publicUrl: {
+const unverifiedQuestionPaperSchema = await mongoose.Schema({
+    url: {
         type: String,   //from cloudinary
         // requried:true,
-        default:"/"
-    },
-    localUrl:{
-        type: String
     },
     format: {
         type: String,
@@ -48,11 +44,6 @@ const questionPaperSchema = await mongoose.Schema({
         index: true,
         enum: [1, 2, 3, 4, 5, 6, 7, 8]
     },
-    isVerified:{
-        type:Boolean,
-        default:false,
-        index:true
-    },
     uploadedBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: User
@@ -61,4 +52,4 @@ const questionPaperSchema = await mongoose.Schema({
 
 
 
-export const QuestionPaper = await mongoose.model("QuestionPaper", questionPaperSchema);
+export const UnverifiedQuestionPaper = await mongoose.model("UnverifiedQuestionPaper", unverifiedQuestionPaperSchema);

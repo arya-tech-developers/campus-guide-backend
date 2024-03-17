@@ -10,7 +10,7 @@ const asyncHandler = (requestHandler) =>
         try {
             return await requestHandler(req, res, next);
         } catch (error) {
-            res.status(500).json(new ApiResponse(error.statusCode, {}, error.message));
+            res.status(500).json(new ApiResponse(error.statusCode||500, {}, error.message));
 
         }
 
