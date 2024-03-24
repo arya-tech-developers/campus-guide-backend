@@ -20,6 +20,7 @@ import questionPaperRouter from "./routes/questionPaper.routes.js";
 
 app.use("/api/v1/users",userRouter);
 app.use("/api/v1/question-paper",questionPaperRouter);
+app.use("/",()=><h1>Hello World!</h1>)
 
 
 export { app };
