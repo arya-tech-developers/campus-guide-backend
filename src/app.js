@@ -21,7 +21,9 @@ import publicApiRouter from "./routes/publicApi.routes.js";
 
 app.use("/api/v1/users",userRouter);
 app.use("/api/v1/question-paper",questionPaperRouter);
-app.use("/",publicApiRouter)
+app.get("/",(req,res)=>{
+        res.send("Hello World!");
+})
 
 
 export { app };
